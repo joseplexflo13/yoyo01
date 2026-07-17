@@ -1,0 +1,156 @@
+/* ============================================================
+   Josep Controler - Estilos
+   (Complementa a Tailwind CSS vía CDN; aquí solo van componentes
+   reutilizables que no se pueden expresar con @apply porque el
+   CDN de Tailwind no procesa hojas de estilo externas)
+   ============================================================ */
+
+/* ---------- Botones grandes de inicio ---------- */
+.home-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.home-btn:active {
+  transform: scale(0.98);
+}
+
+.home-btn-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.home-btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+}
+
+.home-btn-primary:hover {
+  opacity: 0.95;
+}
+
+.home-btn-type {
+  background: #ffffff;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+}
+
+.home-btn-type:hover {
+  background: #f9fafb;
+  border-color: #c7d2fe;
+}
+
+/* ---------- Botones circulares (home / agregar) ---------- */
+.circle-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.circle-btn:hover {
+  background: #f3f4f6;
+}
+
+.circle-btn:active {
+  transform: scale(0.94);
+}
+
+.circle-btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+}
+
+.circle-btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* ---------- Tarjetas de tareas ---------- */
+.task-card {
+  position: relative;
+  animation: fadeIn 0.25s ease-out;
+  touch-action: pan-y; /* deja que el scroll vertical de la página siga funcionando */
+  will-change: transform;
+}
+
+.task-card.is-snapping {
+  transition: transform 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Swipe para completar / eliminar ---------- */
+.swipe-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem; /* debe coincidir con el rounded-xl de la tarjeta */
+}
+
+.swipe-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.swipe-bg-complete {
+  background-color: #3b82f6; /* blue-500: se revela al arrastrar a la derecha */
+}
+
+.swipe-bg-delete {
+  background-color: #ef4444; /* red-500: se revela al arrastrar a la izquierda */
+}
+
+.swipe-icon {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  opacity: 0;
+}
+
+/* ---------- Scrollbar sutil (opcional, solo navegadores WebKit) ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1; /* slate-300 */
+  border-radius: 9999px;
+}
