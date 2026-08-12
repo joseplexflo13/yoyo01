@@ -144,6 +144,186 @@
   opacity: 0;
 }
 
+/* ---------- Subtabs (Tareas / Help) ---------- */
+.subtab-bar {
+  display: flex;
+  gap: 0.25rem;
+  background: #f1f5f9; /* slate-100 */
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.subtab-btn {
+  flex: 1;
+  padding: 0.55rem 0.75rem;
+  border: none;
+  border-radius: 0.55rem;
+  background: transparent;
+  color: #64748b; /* slate-500 */
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.subtab-btn:hover {
+  color: #334155; /* slate-700 */
+}
+
+.subtab-btn-active {
+  background: #ffffff;
+  color: #4f46e5; /* indigo-600 */
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+}
+
+.subtab-btn-active:hover {
+  color: #4f46e5;
+}
+
+/* ---------- Tarjetas de Help (desplegables) ---------- */
+.help-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.help-card-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.help-card-header:hover {
+  background: #f9fafb;
+}
+
+.help-card-chevron {
+  transition: transform 0.2s ease;
+}
+
+.help-card-header[aria-expanded="true"] .help-card-chevron {
+  transform: rotate(180deg);
+}
+
+.help-card-body {
+  padding: 0 1.25rem 1.25rem;
+  color: #374151;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.help-card-body h4 {
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.help-card-body h4:first-child {
+  margin-top: 0;
+}
+
+.help-card-body ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.help-card-body p {
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Bloques de "Comunicación" (subtab Help) ---------- */
+.comm-block {
+  border-radius: 0.85rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid transparent;
+  border-left-width: 4px;
+}
+
+.comm-block-blue {
+  background: #eff6ff; /* blue-50 */
+  border-color: #bfdbfe; /* blue-200 */
+  border-left-color: #3b82f6; /* blue-500 */
+}
+
+.comm-block-red {
+  background: #fef2f2; /* red-50 */
+  border-color: #fecaca; /* red-200 */
+  border-left-color: #ef4444; /* red-500 */
+}
+
+.comm-block-purple {
+  background: #faf5ff; /* purple-50 */
+  border-color: #e9d5ff; /* purple-200 */
+  border-left-color: #a855f7; /* purple-500 */
+}
+
+.comm-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  min-width: 1.35rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.comm-number-blue   { background: #3b82f6; }
+.comm-number-red    { background: #ef4444; }
+.comm-number-purple { background: #a855f7; }
+
+.comm-pill {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  white-space: nowrap;
+}
+
+.comm-pill-blue   { color: #1d4ed8; border: 1px solid #bfdbfe; }
+.comm-pill-red    { color: #b91c1c; border: 1px solid #fecaca; }
+.comm-pill-purple { color: #7e22ce; border: 1px solid #e9d5ff; }
+
+.comm-arrow {
+  color: #9ca3af; /* gray-400 */
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.comm-example {
+  border-radius: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.comm-example p {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #4b5563; /* gray-600 */
+  line-height: 1.5;
+  margin: 0;
+}
+
+.comm-example-blue   { border: 1px dashed #93c5fd; }
+.comm-example-red    { border: 1px dashed #fca5a5; }
+.comm-example-purple { border: 1px dashed #d8b4fe; }
+
 /* ---------- Scrollbar sutil (opcional, solo navegadores WebKit) ---------- */
 ::-webkit-scrollbar {
   width: 8px;
